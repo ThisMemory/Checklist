@@ -32,7 +32,13 @@
                             <outlet property="delegate" destination="fre-LR-JW0" id="8Gi-KJ-ObS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklist" id="uxQ-ee-Jiz"/>
+                    <navigationItem key="navigationItem" title="Checklist" id="uxQ-ee-Jiz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TCj-LO-pui">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="fre-LR-JW0" id="YkG-b0-vrU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xA5-8J-geS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
