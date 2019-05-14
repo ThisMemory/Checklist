@@ -19,6 +19,7 @@ class TodoListViewController: UITableViewController {
         let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
         
         print(dataFilePath)
+        
         loadItems()
         
     }
@@ -37,12 +38,6 @@ class TodoListViewController: UITableViewController {
         
         cell.textLabel?.text = item.title
         cell.accessoryType = item.done ? .checkmark : .none
-        
-//        if item.done == true {
-//            cell.accessoryType = .checkmark
-//        } else {
-//            cell.accessoryType = .none
-//        }
         
         return cell
     }
@@ -111,10 +106,11 @@ class TodoListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+   
+    
     func loadItems() {
         if let data = try? Data(contentsOf: dataFilePath!) {
             let decoder = PropertyListDecoder()
-            
             do {
                 itemArray = try decoder.decode([Item].self, from: data)
             } catch {
